@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 selections.forEach(trait => {
                     counts[trait]++;
                 });
-            
+                //Choosing the trait
                 let personalityType = '';
                 personalityType += counts['I'] > counts['E'] ? 'I' : 'E';
                 personalityType += counts['S'] > counts['N'] ? 'S' : 'N';
