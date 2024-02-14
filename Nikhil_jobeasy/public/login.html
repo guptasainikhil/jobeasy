@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup Forms</title>
+    <link rel="stylesheet" href="login.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div id="login-form">
+        <h2>Login</h2>
+        <form action="/login" method="post"> <!-- Update action with your login endpoint -->
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div id="signup-form">
+        <h2>Signup</h2>
+        <form action="/signup" method="post"> <!-- Update action with your signup endpoint -->
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <!-- Add more fields as needed -->
+            <button type="submit">Signup</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let selections = [];
 
     // Fetch questions from the server
+
+
     fetch('/quiz-questions')
         .then(response => response.json())
         .then(questions => {

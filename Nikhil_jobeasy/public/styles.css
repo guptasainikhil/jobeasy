@@ -1,46 +1,106 @@
+/* General Body Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    background-color: #f4f4f4; /* Softer background color */
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Quiz Box Styling */
 #quiz {
     width: 100%;
     max-width: 600px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #ffffff; /* Pure white for clarity */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling on hover */
+}
+
+#quiz:hover {
+    transform: scale(1.02); /* Slight increase in size on hover for interactivity */
 }
 
 .question {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 24px; /* Larger font size for readability */
+    margin-bottom: 25px;
+    color: #333; /* Darker text for better contrast */
 }
 
 .options {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.options input[type="radio"] {
+    margin-right: 10px;
 }
 
 .options label {
-    margin-left: 8px;
+    width: 100%; /* Full width for easier clickability */
+    padding: 8px 12px;
+    background-color: #f9f9f9; /* Light grey background for options */
+    border: 2px solid #eaeaea; /* Subtle border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s; /* Smooth transition for hover effect */
+}
+
+.options label:hover {
+    background-color: #e2e2e2; /* Slightly darker on hover */
+    border-color: #d1d1d1;
 }
 
 #submit {
     display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    width: calc(100% - 20px); /* Full width taking padding into account */
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #007bff; /* Vibrant blue for submit button */
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px; /* Larger font size */
+    transition: background-color 0.2s; /* Smooth background transition */
 }
 
 #submit:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
+}
+#navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbarInner {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.navbarInner li {
+    float: left;
+}
+
+.navbarInner a {
+    display: block;
+    color: white;
+    padding: 24px 16px;
+    text-decoration: none;
+    text-align: right; /* Set to right */
+}
+
+.navbarInner a:hover {
+    background-color: #ddd;
+    color: black;
 }
