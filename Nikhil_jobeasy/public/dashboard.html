@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .dashboard { margin: 20px; }
+        .dashboard h2 { color: #333; }
+        .dashboard .info { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h2>User Dashboard</h2>
+        <div class="info">Name: <span id="name"></span></div>
+        <div class="info">Username: <span id="username"></span></div>
+        <div class="info">Location: <span id="location"></span></div>
+        <div class="info">Age: <span id="age"></span></div>
+        <div class="info">Gender: <span id="gender"></span></div>
+        <div class="info">Personality Type: <span id="personalityType"></span></div>
+    </div>
+
+    <script>
+        // Fetch user data from the server
+        fetch('/api/userdata')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(userData => {
+                // Update the page with user data
+                document.getElementById('name').textContent = userData.name;
+                document.getElementById('username').textContent = userData.username;
+                document.getElementById('location').textContent = userData.location;
+                document.getElementById('age').textContent = userData.age;
+                document.getElementById('gender').textContent = userData.gender;
+                document.getElementById('personalityType').textContent = userData.personality_type;
+            })
+            .catch(error => {
+                console.error('There was a problem fetching the user data: ', error);
+            });
+    </script>
+    
+</body>
+</html>
